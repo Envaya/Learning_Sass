@@ -6,8 +6,8 @@
 *.[oa]
 
 #ignore the unprocessed files
-*_/components/*
+_/components/*
 
-# rest
-*package.json
-*gruntfile.js
+#rest
+node_modules/
+.DS_Store
