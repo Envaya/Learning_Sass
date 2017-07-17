@@ -1,0 +1,13 @@
+
+
+
+
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+
+#ignore the unprocessed files
+*_/components/*
+
+# rest
+*package.json
+*gruntfile.js

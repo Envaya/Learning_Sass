@@ -13,3 +13,7 @@ var greeter = function(name, gender) {
 };
 
 greeter("Franziska", "ss");
+
+var x = 5;
+var y = 5;
+var p = 4;

@@ -1,1 +1,1 @@
-var greeter=function(e,l){switch(l){case"male":console.log("Hello Mr. "+e+".");break;case"female":console.log("Hello Ms. "+e+".")}};greeter("Franziska","ss");
+var greeter=function(e,l){switch(l){case"male":console.log("Hello Mr. "+e+".");break;case"female":console.log("Hello Ms. "+e+".")}};greeter("Franziska","ss");var x=5,y=5,p=4;
