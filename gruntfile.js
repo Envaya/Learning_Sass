@@ -1,7 +1,15 @@
 module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-evil-icons');
 	grunt.initConfig({
+		evil_icons: {
+		    dist: {
+		      files: {
+		        "build/index.html": "src/index.html"
+		      }
+		    }
+		  },
 		uglify: {
 			my_target: {
 				files: {

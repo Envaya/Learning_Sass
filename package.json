@@ -1,12 +1,14 @@
 {
-	"name" : "learningSass",
-	"version" : "0.0.1",
-	"dependencies" : {
-		"grunt" : "~1.0.1",
-		"grunt-contrib-watch" : "~1.0.0",
-		"grunt-contrib-compass" : "~1.1.1",
-		"grunt-contrib-watch" : "~1.0.0",
-		"grunt-contrib-uglify" : "~3.0.1",
-		"matchdep" : "~1.0.1"
-	}
+  "name": "learningSass",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-compass": "~1.1.1",
+    "grunt-contrib-uglify": "~3.0.1",
+    "matchdep": "~1.0.1"
+  },
+  "devDependencies": {
+    "grunt-evil-icons": "^0.5.0"
+  }
 }

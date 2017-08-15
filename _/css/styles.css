@@ -1,70 +1,197 @@
 
-/* main color: 1C4C81 */
+@charset "UTF-8";
 
 body {
-	background-color: #eeeeee;
+	font-size: 14pt;
 	color: grey;
 	font-family: Roboto;
 	box-sizing: border-box;
+	background: #ECEFF0;
+	padding-top: 80px;
 }
 
-.grid {
-	width: 600px;
-	height: 400px;
-	margin: 0 auto;
-	background-color: #ffffff;
-	padding: 10px 50px 50px 50px;
-	border-radius: 20px;
-	border: 2px solid #cbcbcb;
-	box-shadow: 0px 0px 10px 2px #cccccc;
-	font-family: Roboto;
+
+header {
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	padding: 15px;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	background: #36BEA4;
+	border-radius: 0 0 10px 10px;
+	color: white;
+	box-shadow: 0 2px 4px rgba(44,62,80,0.15);
+	float: left;
 }
 
-.grid h1 {
-	text-align: center;
-	padding: 5px;
-	color: #ffffff;
-	background-color: #1C4C81;
-	border-radius: 6px;
-}
-
-.grid #question {
-	font-size: 26px;
-}
-
-.answers {
-	display: flex;
-/*	background-color: rgba(50,50,50,0.6);*/
-	justify-content: space-between;
-	flex-wrap: wrap;
-	margin: 40px 0 40px 0;
-}
-
-.answers button {
-}
-
-.answers #btn-0, #btn-1, #btn-2, #btn-3 {
-	background-color: #1C4C81;
-	border: 1px solid #102A47;
-	border-radius: 10px;
-	width: 250px;
-	font-size: 20px;
+header input {
+	width: 100%;
+	height: 50px;
+	background: rgba(255,255,255,0.2);
+	border-radius: 5px 25px 25px 5px;
+	padding: 0 60px 0 0;
+	border: none;
+	outline: none;
+	text-indent: 20px;
 	color: #fff;
-	margin: 0 0 20px 0;
-	height: 40px;
+	float: left;
+	font-family: "Roboto";
+	font-size: 15px;
+	font-weight: 400;
+	display: inline;
+	appearance: none;
 }
 
+header input::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.75);
+}
 
-.answers #btn-0:hover, #btn-1:hover, #btn-2:hover, #btn-3:hover {
+header button {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	outline: none;
+	top: 15px;
+	right: 15px;
+	border-radius: 25px;
+	z-index: 2;
+	appearance: none;
+	background-color: #FFF;
+	border: none;
 	cursor: pointer;
-	background-color: #ffffff;
 }
 
-.answers #btn-0:focus, #btn-1:focus, #btn-2:focus, #btn-3:focus {
-	outline: 0;
-	background-color: green;
+header button:hover {
+	border: 2px solid rgba(150,150,150,0.2);
 }
 
-#progress {
+/*header button:hover svg{
+	fill: grey;
+}*/
+
+header button svg {
+	width: 16px;
+	fill: #36BEA4;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -8px 0 0 -8px;
 }
+
+.container {
+	padding: 15px;
+	width: 100%;
+}
+
+ul.todo {
+	margin-top: 15px;
+	list-style: none;
+	width: 100%;
+/*	margin-left: auto;
+	margin-right: auto;*/
+	color: rgb(50,50,50);
+	margin-bottom: 20px;
+}
+
+ul.todo li {
+	background: rgba(255,255,255,1);
+	border-radius: 5px;
+	border: none;
+	min-height: 60px;
+	line-height: 22px;
+	padding: 19px 100px 15px 15px;
+	vertical-align: middle;
+	margin-bottom: 10px;
+	box-shadow: 0 0px 4px rgba(44,62,80,0.3);
+	position: relative;
+}
+
+ul.todo li:last-of-type {
+	margin-bottom: 0;
+}
+
+ul.todo li .buttons {
+	width: 120px;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+}
+
+ul.todo li .buttons button {
+	width: 60px;
+	height: 60px;
+	float: left;
+	position: relative;
+	background: none;
+	box-shadow: none;
+	/*outline: none;*/
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+ul.todo li .buttons button:last-of-type:before {
+	content: "";
+	width: 1px;
+	height: 40px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	background: rgba(150,150,150,0.5);
+}
+
+ul.todo li .buttons button svg {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -15px;
+	margin-left: -15px;
+}
+
+ul.todo li .buttons button svg.fill {
+	transition: fill 0.5s ease;
+}
+
+ul.todo li .buttons button.remove svg.fill {
+	fill: #C0CECA;
+}
+
+ul.todo li .buttons button.remove:hover svg.fill {
+	fill: red;
+}
+
+ul.todo li .buttons button.complete svg.fill {
+	fill: #10BA9A;
+	height: 30px;
+	border: 2px solid #10BA9A;
+	border-radius: 15px
+}
+
+ul.todo li .buttons button.complete:hover svg.fill {
+	background: #10BA9A;
+	fill: #FFF;
+}
+
+ul.todo#completed .buttons button.complete svg {
+	background: #10BA9A;
+	fill: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
