@@ -9,16 +9,23 @@ var doneList = document.getElementById("completed");
 var test = "das ist ein Test";
 
 
-// When add button is clicked, start start the adding function
-document.getElementById("addItem").addEventListener('click', function() {
+// Trigger addItemTodo function when add button is clicked
+document.getElementById("addItem").addEventListener('click', checkValue);
+
+// Trigger addItemTodo function when return key is clicked
+document.getElementById("itemInput").addEventListener('keyup', function(event) {
+	if (event.keyCode === 13) {
+		checkValue();
+	};
+});
+
+function checkValue(){
 	var itemTitel = document.getElementById('itemInput').value;
 	if (itemTitel) {
 		addItemTodo(itemTitel);
 		document.getElementById('itemInput').value = '';
-	} else {
-		console.log('Please enter an item first!');
-	}
-});
+	}	
+};
 
 var addItemTodo = function(text){
 	var item = document.createElement("li");
@@ -36,22 +43,41 @@ var addItemTodo = function(text){
 	remove.innerHTML = removeSVG;
 	complete.innerHTML = completeSVG;
 
+	// Click event for remove button
+	remove.addEventListener("click", function(){
+		if (remove.parentElement.parentElement.parentElement.id == "todo") {
+			toDoList.removeChild(item);
+		} else {
+			doneList.removeChild(item);
+		};
+		if (doneList.length == 0) {
+			doneList.classList.remove("separator");
+		}
+	});
+
+	// Click event for complete button
+	complete.addEventListener("click", function(){
+		if (complete.parentElement.parentElement.parentElement.id == "todo") {
+			doneList.insertBefore(item,doneList.firstChild);
+			console.log(doneList.length);
+
+		} else {
+			toDoList.insertBefore(item,toDoList.firstChild);
+		};
+
+	});
+
 	item.appendChild(buttons);
 	buttons.appendChild(remove);
 	buttons.appendChild(complete);
 	toDoList.insertBefore(item, toDoList.firstChild);
 
-	for (var i = 0; i < document.getElementById("todo").querySelectorAll("li").length; i++) {
-		document.getElementsByClassName("complete")[i].addEventListener("click", function() {
-			var itemCompleted = document.getElementById("todo").getElementsByTagName("li")[i];
-			console.log(itemCompleted);
-			doneList.insertBefore(itemCompleted, doneList.firstChild);
-		});
-	};
+	
 };
 
-completeListener = function() {
 
-};
+
+
+
 
 
